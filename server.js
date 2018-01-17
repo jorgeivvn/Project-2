@@ -13,7 +13,9 @@ app.use(morgan('tiny'));
 app.set('view engine', 'ejs');
 
 
-
+app.get('/', function homepage (req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
 
 
 
