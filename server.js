@@ -3,7 +3,21 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
 
+
+mongoose.connect('mongodb://localhost/user');
+
+// var db
+//
+// MongoCLient.connect('mongodb://localhost:3000/user', (err, database) => {
+//   if (err) return console.log(err)
+//   db = database
+//   app.listen(3000, () => {
+//     console.log('listening on 3000')
+//   })
+// });
 
 app.use(bodyParser.urlencoded({extended: true}));
 
