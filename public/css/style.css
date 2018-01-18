@@ -1,13 +1,10 @@
 h1.round {
   font-family: 'Jura', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
-  color: red;
+  color: #457BF5;
   text-align: center;
-  border: 2px solid red;
+  border: 2px solid #457BF5;
   border-radius: 5px;
-};
-
-.nav .nav-pills {
-  color: #FFF !important;
+  background-color: white;
 };

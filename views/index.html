@@ -12,7 +12,7 @@
 <h1 class="round"> Sneaker Closet </h1>
 
 <!-- Navigation Bar  -->
-<ul class="nav nav-pills nav-fill bg-secondary">
+<ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="#">Home</a>
   </li>
@@ -26,6 +26,15 @@
     <a class="nav-link" href="#">About</a>
   </li>
 </ul>
+
+<form action="/user/:id/shoe/new" method="POST">
+<input type="text" placeholder="Shoe Name" name="name">
+<input type="text" placeholder="Colorway" name="colorway">
+<input type="text" placeholder="Size" name="size">
+<input type="text" placeholder="Cost" name="cost">
+<input type="text" placeholder="Current Price" name="worth">
+<button type="submit">Submit</button>
+</form>
 
 
 
