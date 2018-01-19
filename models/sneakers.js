@@ -6,9 +6,9 @@ var SneakerSchema = new Schema ({
   colorway: String,
   size: Number,
   cost: Number,
-  worth: Number,
+  worth: Number
 });
 
 var Sneaker = mongoose.model('Sneaker', SneakerSchema);
 
-module.exports = Sneaker; 
+module.exports = Sneaker;
