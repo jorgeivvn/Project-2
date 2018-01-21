@@ -1,14 +1,14 @@
-const express = require ('express');
-const app = express();
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const path = require('path');
-const mongoose = require('mongoose');
-const MongoClient = require('mongodb').MongoClient;
+var express = require ('express');
+var app = express();
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
+var path = require('path');
+var mongoose = require('mongoose');
+var MongoClient = require('mongodb').MongoClient;
 
 var Sneaker = require('./models/sneakers');
 
-
+var index = require('./routes/index');
 
 //Middleware
 app.use(express.static('public'));
@@ -18,16 +18,21 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('tiny'));
 app.set('view engine', 'ejs');
 
+app.use('/', index);
+
 var db
 mongoose.connect('mongodb://localhost/sneakercloset', (err, database) => {
   if (err) return console.log(err)
   db = database
   })
 
-//This is "homepage"
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
-});
+
+//**ROUTES**
+
+//This is "homepage", sent to routes index.js
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + '/views/index.html');
+// });
 
 //saves to database to post..
 app.post('/user/:id/shoe/new', (req, res) => {
@@ -39,7 +44,7 @@ app.post('/user/:id/shoe/new', (req, res) => {
   });
 });
 
-//renders to page "index.ejs" 
+//renders to page "index.ejs"
 app.get('/user/:id/shoe/new', (req, res) => {
   db.collection('sneakers').find().toArray(function(err, result) {
     if (err) return console.log(err);
