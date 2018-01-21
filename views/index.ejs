@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sneaker Closet</title>
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+<h1 class="round"> Sneaker Closet </h1>
+
+<!-- Navigation Bar  -->
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Users</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Sign Up</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">About</a>
+  </li>
+</ul>
+
+<h2>
+<ul class="sneakers">
+  <% for(var i=0; i<sneakers.length; i++) {%>
+    <li class="sneakers">
+      <span><%= sneakers[i].name %></span>
+      <span><%= sneakers[i].colorway %></span>
+      <span><%= sneakers[i].size %></span>
+      <span><%= sneakers[i].cost %></span>
+      <span><%= sneakers[i].worth %></span>
+    </li>
+  <% } %>
+</ul>
+</h2>
+
+
+  </body>
+</html>

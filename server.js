@@ -18,48 +18,34 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('tiny'));
 app.set('view engine', 'ejs');
 
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
-});
-
-// app.post('/user/:id/shoe/new', (req, res) => {
-//   console.log(req.body);
-// });
-
-
 var db
 mongoose.connect('mongodb://localhost/sneakercloset', (err, database) => {
   if (err) return console.log(err)
   db = database
   })
 
+//This is "homepage"
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/views/index.html');
+});
+
+//saves to database to post..
 app.post('/user/:id/shoe/new', (req, res) => {
   db.collection('sneakers').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
     console.log('saved to database')
-    res.redirect('/')
-  })
-})
+    res.redirect('/user/:id/shoe/new')
+  });
+});
 
-// app.post('/user/:id/show/new', (req, res) => {
-//   var myData = new Sneaker(req.body);
-//   myData.save()
-//   .then(item => {
-//     res.send("item saved");
-//   })
-//   .catch(err => {
-//     res.status(400).send("unable to save item");
-//   });
-// });
-
-
-
-
-
-
-
+//renders to page "index.ejs" 
+app.get('/user/:id/shoe/new', (req, res) => {
+  db.collection('sneakers').find().toArray(function(err, result) {
+    if (err) return console.log(err);
+    res.render('index.ejs', {sneakers: result})
+  });
+});
 
 
 
