@@ -18,8 +18,9 @@ router.get('/', sneaker.show);
 //edit sneaker input
 router.get('/edit/:id', sneaker.edit);
 
+//update edited sneaker
+router.post('/update/:id', sneaker.update);
 
-
-
+router.post('/delete/:id', sneaker.delete);
 
 module.exports = router;

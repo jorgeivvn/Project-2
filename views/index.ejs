@@ -14,10 +14,10 @@
 <!-- Navigation Bar  -->
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="/">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Users</a>
+    <a class="nav-link" href="/sneakers/">Your Sneakers</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Sign Up</a>
@@ -38,6 +38,7 @@
       <th scope="col">Size</th>
       <th scope="col">Cost</th>
       <th scope="col">Current Price</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -49,6 +50,7 @@
       <td><%= sneaker[i].size %></td>
       <td><%= sneaker[i].cost %></td>
       <td><%= sneaker[i].worth %></td>
+      <td><a href="/sneakers/<%=sneaker[i]._id%>">Edit</a></td>
     </tr>
     <% } %>
   </tbody>
@@ -57,7 +59,7 @@
   <div>No employees found.</div>
 <% } %>
 </div>
-
-
+<form action="/sneakers/add/" method="get">
+  <button type="submit">Add Sneakers</button>
   </body>
 </html>

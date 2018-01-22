@@ -14,10 +14,10 @@
 <!-- Navigation Bar  -->
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="/">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Users</a>
+    <a class="nav-link" href="/sneakers/">Your Sneakers</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Sign Up</a>
@@ -49,7 +49,9 @@
     </tr>
   </tbody>
 </table>
-
+<h3><a href="/sneakers/edit/<%= sneaker._id%>">EDIT</a></h3>
+      <form action="/sneakers/delete/<%= sneaker._id%>" method="post">
+        <button type="submit">DELETE</button>
 
   </body>
 </html>
