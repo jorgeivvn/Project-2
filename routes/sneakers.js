@@ -8,6 +8,10 @@ router.get('/add', function(req, res) {
   sneaker.create(req, res);
 });
 
+//To save sneaker
+router.post('/save', function(req, res) {
+  sneaker.save(req, res);
+});
 
 
 

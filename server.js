@@ -24,11 +24,10 @@ app.set('view engine', 'ejs');
 app.use('/', index);
 app.use('/sneakers', sneakers);
 
-var db
-mongoose.connect('mongodb://localhost/sneakercloset', (err, database) => {
-  if (err) return console.log(err)
-  db = database
-  })
+
+mongoose.connect('mongodb://localhost/sneakercloset', () => {
+  console.log('DB Connection Established')
+});
 
 
 //**ROUTES**
@@ -38,7 +37,7 @@ mongoose.connect('mongodb://localhost/sneakercloset', (err, database) => {
 //   res.sendFile(__dirname + '/views/index.html');
 // });
 
-//saves to database to post..
+// saves to database to post..
 // app.post('/user/:id/shoe/new', (req, res) => {
 //   db.collection('sneakers').save(req.body, (err, result) => {
 //     if (err) return console.log(err)
