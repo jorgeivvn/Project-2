@@ -25,7 +25,7 @@ sneakerController.save = function(req, res) {
   });
 };
 
-//will render list of sneaker by id 
+//will render list of sneaker by id
 sneakerController.list = function(req, res) {
   Sneaker.findOne({_id: req.params.id}).exec(function (err, sneaker) {
     if(err) {
@@ -35,6 +35,28 @@ sneakerController.list = function(req, res) {
     }
   });
 };
+
+//FUNCTION NOT WORKING** Trying to render all data saved to database
+sneakerController.show = function(req, res) {
+  Sneaker.find({}).exec(function(err, sneaker) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.render('../views/index', {sneaker: sneaker});
+    };
+  });
+};
+
+sneakerController.edit = function(req, res) {
+  Sneaker.findOne({_id: req.params.id}).exec(function (err, sneaker) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.render('../views/editsnkrs', {sneaker: sneaker});
+    };
+  });
+};
+
 
 
 
