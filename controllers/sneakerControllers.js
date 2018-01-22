@@ -19,9 +19,20 @@ sneakerController.save = function(req, res) {
       console.log(err);
       res.render('../views/sneakers/create');
     } else {
-      
-      res.redirect('/sneakers/show/'+sneaker._id);
+      console.log('Saved to DB');
+      res.redirect('/sneakers/'+sneaker._id);
     };
+  });
+};
+
+//will render list of sneaker by id 
+sneakerController.list = function(req, res) {
+  Sneaker.findOne({_id: req.params.id}).exec(function (err, sneaker) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.render('../views/listsnkrs', {sneaker: sneaker});
+    }
   });
 };
 

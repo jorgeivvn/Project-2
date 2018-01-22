@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 <h1 class="round"> Sneaker Closet </h1>
@@ -27,15 +27,29 @@
   </li>
 </ul>
 
-<form action="/user/:id/shoe/new" method="POST">
-<input type="text" placeholder="Brand" name="brand">
-<input type="text" placeholder="Shoe Name" name="name">
-<input type="text" placeholder="Colorway" name="colorway">
-<input type="text" placeholder="Size" name="size">
-<input type="text" placeholder="Cost" name="cost">
-<input type="text" placeholder="Current Price" name="worth">
-<button type="submit">Submit</button>
-</form>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Brand</th>
+      <th scope="col">Name</th>
+      <th scope="col">Colorway</th>
+      <th scope="col">Size</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Current Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= sneaker.brand %></td>
+      <td><%= sneaker.name %></td>
+      <td><%= sneaker.colorway %></td>
+      <td><%= sneaker.size %></td>
+      <td><%= sneaker.cost %></td>
+      <td><%= sneaker.worth %></td>
+    </tr>
+  </tbody>
+</table>
+
 
   </body>
 </html>
