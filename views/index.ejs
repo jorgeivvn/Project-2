@@ -38,7 +38,7 @@
       <th scope="col">Size</th>
       <th scope="col">Cost</th>
       <th scope="col">Current Price</th>
-      <th scope="col">Edit</th>
+      <th scope="col">Manager</th>
     </tr>
   </thead>
   <tbody>
@@ -50,16 +50,18 @@
       <td><%= sneaker[i].size %></td>
       <td><%= sneaker[i].cost %></td>
       <td><%= sneaker[i].worth %></td>
-      <td><a href="/sneakers/<%=sneaker[i]._id%>">Edit</a></td>
+      <td><a href="/sneakers/<%=sneaker[i]._id%>">Manage</a></td>
     </tr>
     <% } %>
   </tbody>
 </table>
 <% } else { %>
-  <div>No employees found.</div>
+  <div>Closet is empty!</div>
 <% } %>
 </div>
+<div class="buttonHolder">
 <form action="/sneakers/add/" method="get">
-  <button type="submit">Add Sneakers</button>
+  <button type="submit" style="background-color:#29FF9B">Add Sneakers</button>
+</div>
   </body>
 </html>

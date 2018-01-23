@@ -59,21 +59,21 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-app.get('/auth/google', passport.authenticate('google', { scope: "email" }));
-
-app.get('/auth/google/callback',
-      passport.authenticate('google', { successRedirect: '/',
-        failureRedirect: '/' }));
-
-        // Logout
-app.get("/logout", function(req, res){
-  req.logout();
-  res.redirect("/")
-});
-
-app.get('/', function(req, res){
-  res.render('layout', {user: req.user});
-});
+// app.get('/auth/google', passport.authenticate('google', { scope: "email" }));
+//
+// app.get('/auth/google/callback',
+//       passport.authenticate('google', { successRedirect: '/',
+//         failureRedirect: '/' }));
+//
+//         // Logout
+// app.get("/logout", function(req, res){
+//   req.logout();
+//   res.redirect("/")
+// });
+//
+// app.get('/', function(req, res){
+//   res.render('layout', {user: req.user});
+// });
 
 
 

@@ -36,6 +36,7 @@
       <th scope="col">Size</th>
       <th scope="col">Cost</th>
       <th scope="col">Current Price</th>
+      <th scope="col">Manager</th>
     </tr>
   </thead>
   <tbody>
@@ -46,12 +47,16 @@
       <td><%= sneaker.size %></td>
       <td><%= sneaker.cost %></td>
       <td><%= sneaker.worth %></td>
+      <td><a href="/sneakers/edit/<%= sneaker._id%>">Edit</a></td>
     </tr>
   </tbody>
 </table>
-<h3><a href="/sneakers/edit/<%= sneaker._id%>">EDIT</a></h3>
-      <form action="/sneakers/delete/<%= sneaker._id%>" method="post">
-        <button type="submit">DELETE</button>
 
+
+
+      <div class="buttonHolder">
+      <form action="/sneakers/delete/<%= sneaker._id%>" method="post">
+        <button type="submit" style="background-color:#FF503B">DELETE</button>
+      </div>
   </body>
 </html>
